@@ -12,6 +12,7 @@ before_install:
   - chmod u+x kubeval
   - mv helm kubeval /home/travis/bin/
   - helm init -c
+  - helm repo add "stable" "https://charts.helm.sh/stable"
  
 env:
   # Which K8s version are we going to validate against
