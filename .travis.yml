@@ -11,8 +11,10 @@ before_install:
   - tar xzvf kubeval-linux-amd64.tar.gz
   - chmod u+x kubeval
   - mv helm kubeval /home/travis/bin/
-  - helm repo add "stable" "https://charts.helm.sh/stable"
-  - helm init -c
+  # - helm init -c
+  - helm init --client-only --skip-refresh
+  - helm repo rm stable
+  - helm repo add stable https://charts.helm.sh/stable
  
 env:
   # Which K8s version are we going to validate against
