@@ -3,7 +3,7 @@ todoVersion: "1.0"
 
 services:
   todoProxy:
-    port: 8080
+    port: 80
 
 replicas: 
   todoApiGateway: 2
